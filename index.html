@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <title>Lista de Compras</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row p-0">
+            <div class="col-12 p-0 d-block d-lg-flex">
+                <div class="lateralForm col-12 col-lg-4 d-flex justfy-content-center p-0">
+                    <div class="d-block col-12 p-0">
+                        <div class="barraTopo col-12 d-flex justfy-content-center align-items-center p-0">
+                            <p class="minhasCompras m-auto">MINHAS<span>COMPRAS</span></p>
+                        </div>
+                        <div class="formLista d-flex justify-content-center align-items-center col-12 p-0">
+
+                            <form role="form" id="form-item-create" class="col-10 col-md-9 m-auto">
+                                <div class="tituloForm col-12 d-flex align-items-center p-0 mb-3">
+                                    <h5>Novo Item</h5>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputDescricao">Descrição</label>
+                                    <input type="text" class="form-control" id="inputDescricao" placeholder="Digite a descrição do item" name="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputQuantidade">Quantidade</label>
+                                    <input type="number" class="form-control" id="inputQuantidade" placeholder="Digite a quantidade de itens" name="name">
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn col-12 mt-3">Incluir na Lista</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="areaLista col-12 col-lg-8 d-flex justfy-content-center p-0 ">
+                    <div class="d-block col-12 p-0 ">
+                        <div class="barraTopo2 col-12 d-flex justfy-content-center align-items-center p-0 ">
+                            <p class="m-auto"><a href="https://www.instagram.com/imaarques/" target="new_blank" class="text-decoration-none imaarques">Desenvolvido por: @imaarques</a></p>
+                        </div>
+
+                        <div class="tituloCompras col-12 d-flex justify-content-center justify-content-md-start align-items-center p-0 pl-md-5 ">
+                            <h3 class="tituloCompras2 ">Compras</h3>
+                        </div>
+                        <div class="lista d-flex justfy-content-center align-items-center col-11 m-auto p-0 ">
+                            <div class="d-block col-12 p-0 ">
+                                <div class="tituloLista d-flex justify-content-center justify-content-md-start align-items-center col-12 ">
+                                    <h5>Lista de Compras</h5>
+                                </div>
+                                <div class="listaDeCompras d-flex justify-content-center align-items-center p-0 col-12 ">
+                                    <table class="tabelaLista col-12 p-0 table table-striped ">
+                                        <thead>
+                                            <tr>
+                                                <th>Item</th>
+                                                <th>Descrição</th>
+                                                <th>Quantidade</th>
+                                                <th><button type="button " class="btn btn-danger btn-sm ">Limpar</button></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td>01</td>
+                                                <td>Frango a passrinho</td>
+                                                <td>02</td>
+                                                <td>
+                                                    <button type="button " class="btn btn-danger btn-sm ">Excluir</button>
+                                                </td>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.min.js "></script>
+</body>
+
+</html>

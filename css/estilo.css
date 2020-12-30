@@ -1,0 +1,140 @@
+body,
+html {
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.lateralForm {
+    background-color: rgb(22, 27, 34);
+    color: white;
+    height: 100vh;
+}
+
+.barraTopo {
+    background-color: rgb(143, 65, 206);
+    color: white;
+    height: 50px;
+}
+
+.areaLista {
+    background-color: rgb(245, 239, 239);
+    color: black;
+    height: 100vh;
+}
+
+.barraTopo2 {
+    background-color: rgb(117, 48, 177);
+    color: white;
+    height: 50px;
+}
+
+.lista {
+    background-color: white;
+    border-radius: 5px;
+    border-top: 3px solid rgb(204, 201, 201);
+}
+
+.tituloCompras {
+    height: 70px;
+}
+
+.tituloLista {
+    height: 50px;
+}
+
+.tabelaLista {
+    font-size: 13px;
+}
+
+.tabelaLista button {
+    font-size: 10px;
+}
+
+.tabelaLista th {
+    margin: 0 auto;
+    text-align: center;
+    height: 40px;
+    padding: 10px;
+}
+
+.tabelaLista td {
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.minhasCompras {
+    font-size: 16px;
+    color: rgb(253, 253, 253);
+    font-weight: 400;
+}
+
+.minhasCompras span {
+    font-weight: 800;
+    color: rgb(42, 11, 63);
+}
+
+.imaarques {
+    font-size: 14px;
+    color: rgb(42, 11, 63);
+    font-weight: bold;
+}
+
+.imaarques:hover {
+    color: rgb(42, 11, 63);
+    cursor: pointer;
+}
+
+.formLista {
+    height: 80%;
+}
+
+.formLista label {
+    font-weight: bold;
+}
+
+.formLista form {
+    background-color: white;
+    border-radius: 5px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    color: black;
+    border-top: 6px solid rgb(143, 65, 206);
+}
+
+.formLista button {
+    background-color: rgb(143, 65, 206);
+    color: white;
+    font-weight: bold;
+}
+
+.formLista button:hover {
+    opacity: 0.8;
+    color: white;
+}
+
+.tituloForm {
+    font-weight: bold;
+    border-bottom: 1px solid rgb(216, 212, 212);
+}
+
+.fundo1 {
+    background-color: green;
+}
+
+.fundo2 {
+    background-color: hotpink;
+}
+
+.fundo3 {
+    background-color: indigo;
+}
+
+.fundo4 {
+    background-color: lightseagreen;
+}
+
+.fundo5 {
+    background-color: maroon;
+}
