@@ -15,7 +15,11 @@ class ItemController {
 
             event.preventDefault();
 
-            this.addLine(this.getValues());
+            let values = this.getValues();
+
+            if (!values) return false;
+
+            this.addLine(values);
 
         });
 
@@ -31,8 +35,7 @@ class ItemController {
             if (['descricao', 'quantidade'].indexOf(field.name) > -1 && !field.value) {
 
                 field.classList.add('is-invalid');
-                return this.addLine() = false;
-
+                isValid = false;
             }
 
             if (field.name) {
@@ -40,6 +43,11 @@ class ItemController {
             }
 
         });
+
+        if (!isValid) {
+
+            return false;
+        }
 
         return new Item(item.descricao, item.quantidade);
 
