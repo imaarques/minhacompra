@@ -5,6 +5,10 @@ html {
     overflow-x: hidden;
 }
 
+body {
+    font-family: 'PT Sans', Arial, sans-serif;
+}
+
 .lateralForm {
     background-color: rgb(22, 27, 34);
     color: white;
@@ -67,11 +71,10 @@ html {
 .minhasCompras {
     font-size: 16px;
     color: rgb(253, 253, 253);
-    font-weight: 400;
 }
 
 .minhasCompras span {
-    font-weight: 800;
+    font-weight: bold;
     color: rgb(42, 11, 63);
 }
 
