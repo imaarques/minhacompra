@@ -103,7 +103,8 @@ body {
     padding-top: 30px;
     padding-bottom: 50px;
     color: black;
-    border-top: 6px solid rgb(143, 65, 206);
+    border-top: 9px solid rgb(143, 65, 206);
+    border-bottom: 9px solid rgb(143, 65, 206);
 }
 
 .formLista button {
