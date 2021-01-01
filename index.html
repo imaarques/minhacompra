@@ -7,10 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+    <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/estilo.css">
     <link href="webfonts/fa-solid-900.woff2">
     <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="dist/css/skins/skin-purple.min.css">
@@ -25,6 +24,13 @@
         <div class="row p-0">
             <div class="col-12 p-0 d-block d-lg-flex">
                 <div class="lateralForm col-12 col-lg-4 d-flex justfy-content-center p-0">
+                    <div class="barraTopo3 col-12 d-flex justfy-content-center align-items-center p-0" style="position: absolute; bottom: 0px;">
+                    </div>
+                    <div class="iconeDown d-lg-none justify-content-center align-items-center">
+                        <h1>
+                            <a href="#lista" class="text-decoration-none"><i class="fas fa-chevron-circle-down"></i></a>
+                        </h1>
+                    </div>
                     <div class="d-block col-12 p-0">
                         <div class="barraTopo col-12 d-flex justfy-content-center align-items-center p-0">
                             <p class="minhasCompras m-auto">MINHAS <span>COMPRAS <i class="fas fa-thumbtack"></i></span></p>
@@ -51,18 +57,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="areaLista col-12 col-lg-8 d-flex justfy-content-center p-0 ">
-                    <div class="d-block col-12 p-0 ">
-                        <div class="barraTopo2 col-12 d-flex justfy-content-center align-items-center p-0 ">
-                            <p class="m-auto "><a href="https://www.instagram.com/imaarques/ " target="new_blank " class="text-decoration-none imaarques ">Desenvolvido por: @imaarques</a></p>
-                        </div>
+                <div class="areaLista col-12 col-lg-8 d-flex justfy-content-center p-0">
+                    <div class="barraTopo2 col-12 d-flex justfy-content-center align-items-center p-0" style="position: absolute; bottom: 0px;">
+                        <p class="m-auto "><a href="https://igormarques.me/" target="new_blank " class="text-decoration-none imaarques ">Desenvolvido por: @imaarques</a></p>
+                    </div>
+                    <div class="d-block col-12 pb-5 lista">
 
-                        <div class="tituloCompras col-12 d-flex justify-content-center justify-content-md-start align-items-center p-0 pl-md-5 mt-4 mt-md-0">
+                        <div class="tituloCompras col-12 d-flex justify-content-center justify-content-md-start align-items-center p-0 pl-md-5 mt-5" id="lista">
                             <h3 class="tituloCompras2 ">Compras</h3>
                         </div>
-                        <div class="lista d-flex justfy-content-center align-items-center col-11 m-auto p-0 ">
+                        <div class="listaGrupo d-flex justfy-content-center align-items-center col-11 m-auto p-0 ">
                             <div class="d-block col-12 p-0 ">
-                                <div class="tituloLista d-flex justify-content-center justify-content-md-start align-items-center col-12 ">
+                                <div class="tituloLista d-flex justify-content-center justify-content-md-start align-items-center col-12 pl-md-3">
                                     <h5>Lista de Compras</h5>
                                 </div>
                                 <div class="listaDeCompras d-flex justify-content-center align-items-center p-0 col-12 ">
@@ -72,7 +78,7 @@
                                                 <th>Item</th>
                                                 <th>Descrição</th>
                                                 <th>Quantidade</th>
-                                                <th><button type="button " class="btn btn-danger btn-sm ">Limpar</button></th>
+                                                <th><button type="button " class="btn btn-danger btn-sm btn-limpar">Limpar</button></th>
                                             </tr>
                                         </thead>
                                         <tbody id="table-items">

@@ -5,6 +5,10 @@ html {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'PT Sans', Arial, sans-serif;
 }
@@ -33,10 +37,54 @@ body {
     height: 50px;
 }
 
-.lista {
+.barraTopo3 {
+    background-color: rgb(117, 48, 177);
+    color: white;
+    height: 25px;
+}
+
+.iconeDown {
+    position: absolute;
+    height: 50px;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    z-index: 30;
+}
+
+.iconeDown a {
+    color: rgb(117, 48, 177);
+    cursor: pointer;
+}
+
+.iconeDown a:hover {
+    opacity: 0.7;
+    color: rgb(117, 48, 177);
+}
+
+.listaGrupo {
     background-color: white;
     border-radius: 5px;
-    border-top: 3px solid rgb(204, 201, 201);
+    border-top: 4px solid rgb(117, 48, 177);
+    border-bottom: 4px solid rgb(117, 48, 177);
+}
+
+.lista {
+    overflow-y: scroll;
+    height: 90vh;
+}
+
+.lista::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.lista::-webkit-scrollbar {
+    width: 2px;
+    background: rgba(0, 0, 0, 0.26);
+}
+
+.lista::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.26);
 }
 
 .tituloCompras {
@@ -45,6 +93,7 @@ body {
 
 .tituloLista {
     height: 50px;
+    color: black;
 }
 
 .tabelaLista {
@@ -121,24 +170,4 @@ body {
 .tituloForm {
     font-weight: bold;
     border-bottom: 1px solid rgb(216, 212, 212);
-}
-
-.fundo1 {
-    background-color: green;
-}
-
-.fundo2 {
-    background-color: hotpink;
-}
-
-.fundo3 {
-    background-color: indigo;
-}
-
-.fundo4 {
-    background-color: lightseagreen;
-}
-
-.fundo5 {
-    background-color: maroon;
 }
