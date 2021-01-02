@@ -1,10 +1,10 @@
 class Item {
 
-    constructor(descricao, quantidade, custo) {
+    constructor(check, descricao, quantidade) {
 
         this._descricao = descricao;
         this._quantidade = quantidade;
-        this._custo = custo;
+        this._check = check;
         this._id;
 
     }
@@ -17,10 +17,9 @@ class Item {
         return this._quantidade;
     }
 
-    get custo() {
-        return this._custo;
+    get check() {
+        return this._check;
     }
-
 
     loadFromJSON(json) {
 

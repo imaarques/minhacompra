@@ -37,7 +37,7 @@ class ItemController {
 
         [...this.formEl.elements].forEach((field, index) => {
 
-            if (['descricao', 'quantidade', 'custo'].indexOf(field.name) > -1 && !field.value) {
+            if (['check', 'descricao', 'quantidade'].indexOf(field.name) > -1 && !field.value) {
 
                 field.classList.add('is-invalid');
                 isValid = false;
@@ -54,7 +54,7 @@ class ItemController {
             return false;
         }
 
-        return new Item(item.descricao, item.quantidade, item.custo);
+        return new Item(item.check, item.descricao, item.quantidade);
 
     }
 
@@ -96,6 +96,7 @@ class ItemController {
         localStorage.setItem("items", JSON.stringify(obj)); //reescreve a localStorage
     }
 
+
     selectAll() {
         let items = Item.getItemsStorage();
 
@@ -116,16 +117,14 @@ class ItemController {
 
         let tr = document.createElement('tr');
 
-
         tr.dataset.item = JSON.stringify(dataItem);
 
         tr.classList.add('trRemove');
 
         tr.innerHTML = `
-                <td> <input id="check" type="checkbox"></td>
+                <td><input id="check" type="checkbox" value='${dataItem.check}'></td>
                 <td>${dataItem.descricao}</td>
                 <td>${dataItem.quantidade}</td>
-                <td>${dataItem.custo}</td>
                 <td>
                 <button type="button " class="btn btn-danger btn-sm btn-remove">Excluir</button>
                 </td>`;
