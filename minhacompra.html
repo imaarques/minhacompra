@@ -49,6 +49,10 @@
                                     <label for="inputQuantidade">Quantidade</label>
                                     <input type="text" required class="form-control" id="inputQuantidade" placeholder="Digite a quantidade de itens" name="quantidade">
                                 </div>
+                                <div class="form-group">
+                                    <label for="inputCusto">Custo</label>
+                                    <input type="number" required class="form-control" id="inputCusto" placeholder="Digite o custo dos itens" name="custo">
+                                </div>
                                 <div>
                                     <button type="submit" class="btn col-12 mt-3 incluir">Incluir na Lista</button>
                                 </div>
@@ -66,7 +70,7 @@
                         <div class="tituloCompras col-12 d-flex justify-content-center justify-content-md-start align-items-center p-0 pl-md-5 mt-5" id="lista">
                             <h3 class="tituloCompras2 ">Compras</h3>
                         </div>
-                        <div class="listaGrupo d-flex justfy-content-center align-items-center col-11 m-auto p-0 ">
+                        <div class="listaGrupo d-flex justfy-content-center align-items-center col-12 col-md-11 m-auto p-0 ">
                             <div class="d-block col-12 p-0 ">
                                 <div class="tituloLista d-flex justify-content-center justify-content-md-start align-items-center col-12 pl-md-3">
                                     <h5>Lista de Compras</h5>
@@ -75,9 +79,10 @@
                                     <table class="tabelaLista col-12 p-0 table table-striped ">
                                         <thead>
                                             <tr>
-                                                <th>Item</th>
+                                                <th>Check</th>
                                                 <th>Descrição</th>
                                                 <th>Quantidade</th>
+                                                <th>Custo R$</th>
                                                 <th><button type="button " class="btn btn-danger btn-sm btn-limpar">Limpar</button></th>
                                             </tr>
                                         </thead>

@@ -1,9 +1,10 @@
 class Item {
 
-    constructor(descricao, quantidade) {
+    constructor(descricao, quantidade, custo) {
 
         this._descricao = descricao;
         this._quantidade = quantidade;
+        this._custo = custo;
         this._id;
 
     }
@@ -14,6 +15,10 @@ class Item {
 
     get quantidade() {
         return this._quantidade;
+    }
+
+    get custo() {
+        return this._custo;
     }
 
 
@@ -43,7 +48,7 @@ class Item {
 
     getNewID() {
 
-        let itemsID = parseInt(localStorage.getItem("usersID"));
+        let itemsID = parseInt(localStorage.getItem("itemsID"));
 
         if (!itemsID > 0) itemsID = 0;
 

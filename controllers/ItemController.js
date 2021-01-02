@@ -4,8 +4,6 @@ class ItemController {
 
         this.formEl = document.getElementById(formId);
         this.tableEl = document.getElementById(tableId);
-        this.contagem = 0;
-
 
         this.onSubmit();
         this.clickLimpar();
@@ -26,9 +24,6 @@ class ItemController {
 
             this.formEl.reset();
 
-            this.contagem = this.contagem + 1;
-
-
             this.addLine(values);
 
         });
@@ -42,7 +37,7 @@ class ItemController {
 
         [...this.formEl.elements].forEach((field, index) => {
 
-            if (['descricao', 'quantidade'].indexOf(field.name) > -1 && !field.value) {
+            if (['descricao', 'quantidade', 'custo'].indexOf(field.name) > -1 && !field.value) {
 
                 field.classList.add('is-invalid');
                 isValid = false;
@@ -59,11 +54,12 @@ class ItemController {
             return false;
         }
 
-        return new Item(item.descricao, item.quantidade);
+        return new Item(item.descricao, item.quantidade, item.custo);
 
     }
 
     clickLimpar() {
+
         document.querySelector('.btn-limpar').addEventListener('click', evento => {
 
             let trRemove = document.getElementsByClassName('trRemove');
@@ -71,8 +67,12 @@ class ItemController {
             if (confirm('Deseja realmente limpar?')) {
 
                 for (var r = 0; r < trRemove.length; r + trRemove.length) {
+
                     trRemove[r].remove();
-                    this.contagem = 0;
+
+                    this.removeItem();
+
+
 
                 }
 
@@ -81,6 +81,19 @@ class ItemController {
         });
 
 
+    }
+
+    removeItem(id) {
+        let index = -1;
+        let obj = JSON.parse(localStorage.getItem("items")) || {}; //localStorage Nome
+        let items = obj || []; //get todos produtos
+        for (var i = 0; i < items.length; i++) { //loop para buscar o id
+            if (items[i].id === id) { //verifica id
+                items.splice(i, 1); //remove item
+                break; //finaliza o loop
+            }
+        }
+        localStorage.setItem("items", JSON.stringify(obj)); //reescreve a localStorage
     }
 
     selectAll() {
@@ -103,14 +116,16 @@ class ItemController {
 
         let tr = document.createElement('tr');
 
+
         tr.dataset.item = JSON.stringify(dataItem);
 
         tr.classList.add('trRemove');
 
         tr.innerHTML = `
-                <td>${this.contagem}</td>
+                <td> <input id="check" type="checkbox"></td>
                 <td>${dataItem.descricao}</td>
                 <td>${dataItem.quantidade}</td>
+                <td>${dataItem.custo}</td>
                 <td>
                 <button type="button " class="btn btn-danger btn-sm btn-remove">Excluir</button>
                 </td>`;
@@ -126,9 +141,10 @@ class ItemController {
 
                 item.loadFromJSON(JSON.parse(tr.dataset.item));
 
+                tr.remove();
+
                 item.remove();
 
-                tr.remove();
 
             }
 
