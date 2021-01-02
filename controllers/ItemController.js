@@ -9,6 +9,7 @@ class ItemController {
 
         this.onSubmit();
         this.clickLimpar();
+        this.selectAll();
     }
 
     onSubmit() {
@@ -17,11 +18,16 @@ class ItemController {
 
             event.preventDefault();
 
-            let values = this.getValues();
+            let values = this.getValues(this.formEl);
 
             if (!values) return false;
 
+            values.save();
+
+            this.formEl.reset();
+
             this.contagem = this.contagem + 1;
+
 
             this.addLine(values);
 
@@ -66,11 +72,29 @@ class ItemController {
 
                 for (var r = 0; r < trRemove.length; r + trRemove.length) {
                     trRemove[r].remove();
+                    this.contagem = 0;
+
                 }
 
             }
 
         });
+
+
+    }
+
+    selectAll() {
+        let items = Item.getItemsStorage();
+
+        items.forEach(dataItem => {
+            let item = new Item();
+
+            item.loadFromJSON(dataItem);
+
+            this.addLine(item);
+
+        });
+
 
     }
 
@@ -78,6 +102,8 @@ class ItemController {
     addLine(dataItem) {
 
         let tr = document.createElement('tr');
+
+        tr.dataset.item = JSON.stringify(dataItem);
 
         tr.classList.add('trRemove');
 
@@ -94,7 +120,13 @@ class ItemController {
 
         tr.querySelector('.btn-remove').addEventListener('click', e => {
 
-            if (confirm('Deseja realmente escluir?')) {
+            if (confirm('Deseja realmente excluir?')) {
+
+                let item = new Item();
+
+                item.loadFromJSON(JSON.parse(tr.dataset.item));
+
+                item.remove();
 
                 tr.remove();
 
