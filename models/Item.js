@@ -1,6 +1,6 @@
 class Item {
 
-    constructor(check, descricao, quantidade) {
+    constructor(descricao, quantidade, check) {
 
         this._descricao = descricao;
         this._quantidade = quantidade;

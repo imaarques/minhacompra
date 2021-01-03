@@ -4,10 +4,12 @@ class ItemController {
 
         this.formEl = document.getElementById(formId);
         this.tableEl = document.getElementById(tableId);
+        this.checado = document.getElementById('check');
 
         this.onSubmit();
         this.clickLimpar();
         this.selectAll();
+        this.getChecked();
     }
 
     onSubmit() {
@@ -22,11 +24,41 @@ class ItemController {
 
             values.save();
 
+
             this.formEl.reset();
 
             this.addLine(values);
 
         });
+
+    }
+
+    getChecked() {
+
+        var ls = localStorage.getItem("box");
+        if (ls) {
+            var b = ls.split(",");
+            for (var x = 0; x < b.length; x++) {
+                document.getElementById(b[x]).checked = true;
+            }
+            var checados = b;
+        } else {
+            var checados = [];
+        }
+
+        var boxes = document.querySelectorAll("#table-items [name='check']");
+        for (var x = 0; x < boxes.length; x++) {
+            boxes[x].onchange = function() {
+                var idx = checados.indexOf(this.id);
+                if (this.checked && !~idx) {
+                    checados.push(this.id);
+
+                } else {
+                    checados.splice(idx, 1);
+                }
+                localStorage.setItem("box", checados);
+            }
+        }
 
     }
 
@@ -54,7 +86,7 @@ class ItemController {
             return false;
         }
 
-        return new Item(item.check, item.descricao, item.quantidade);
+        return new Item(item.descricao, item.quantidade);
 
     }
 
@@ -122,7 +154,7 @@ class ItemController {
         tr.classList.add('trRemove');
 
         tr.innerHTML = `
-                <td><input id="check" type="checkbox" value='${dataItem.check}'></td>
+                <td><input id="check" type="checkbox" name='check' value='${dataItem.check}'></td>
                 <td>${dataItem.descricao}</td>
                 <td>${dataItem.quantidade}</td>
                 <td>
