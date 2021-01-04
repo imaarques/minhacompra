@@ -9,7 +9,7 @@ class ItemController {
         this.onSubmit();
         this.clickLimpar();
         this.selectAll();
-        this.getChecked();
+        this.setupBox();
     }
 
     onSubmit() {
@@ -28,39 +28,24 @@ class ItemController {
             this.formEl.reset();
 
             this.addLine(values);
+        });
+    }
 
+    setupBox() {
+
+        jQuery($ => {
+            var arr = JSON.parse(localStorage.getItem('checked')) || [];
+            arr.forEach((c, i) => $('.check').eq(i).prop('checked', c));
+
+            $(".check").click(() => {
+                var arr = $('.check').map((i, el) => el.checked).get();
+                localStorage.setItem("checked", JSON.stringify(arr));
+            });
         });
 
     }
 
-    getChecked() {
 
-        var ls = localStorage.getItem("box");
-        if (ls) {
-            var b = ls.split(",");
-            for (var x = 0; x < b.length; x++) {
-                document.getElementById(b[x]).checked = true;
-            }
-            var checados = b;
-        } else {
-            var checados = [];
-        }
-
-        var boxes = document.querySelectorAll("#table-items [name='check']");
-        for (var x = 0; x < boxes.length; x++) {
-            boxes[x].onchange = function() {
-                var idx = checados.indexOf(this.id);
-                if (this.checked && !~idx) {
-                    checados.push(this.id);
-
-                } else {
-                    checados.splice(idx, 1);
-                }
-                localStorage.setItem("box", checados);
-            }
-        }
-
-    }
 
     getValues(formEl) {
 
@@ -154,7 +139,7 @@ class ItemController {
         tr.classList.add('trRemove');
 
         tr.innerHTML = `
-                <td><input id="check" type="checkbox" name='check' value='${dataItem.check}'></td>
+                <td><input id="check" class="check" type="checkbox" name='check' value='${dataItem.check}'></td>
                 <td>${dataItem.descricao}</td>
                 <td>${dataItem.quantidade}</td>
                 <td>
