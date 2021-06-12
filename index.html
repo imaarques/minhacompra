@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link href="webfonts/fa-solid-900.woff2">
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="dist/css/adminlte.css">
     <link rel="stylesheet" href="dist/css/skins/skin-purple.min.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -43,14 +43,14 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputDescricao">Descrição</label>
-                                    <input type="text" class="form-control" id="inputDescricao" placeholder="Digite a descrição do item" name="descricao">
+                                    <input type="text" required class="form-control" id="inputDescricao" placeholder="Digite a descrição do item" name="descricao">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputQuantidade">Quantidade</label>
-                                    <input type="number" class="form-control" id="inputQuantidade" placeholder="Digite a quantidade de itens" name="quantidade">
+                                    <input type="text" required class="form-control" id="inputQuantidade" placeholder="Digite a quantidade de itens" name="quantidade">
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn col-12 mt-3">Incluir na Lista</button>
+                                    <button type="submit" class="btn col-12 mt-3 incluir">Incluir na Lista</button>
                                 </div>
                             </form>
 
@@ -66,16 +66,16 @@
                         <div class="tituloCompras col-12 d-flex justify-content-center justify-content-md-start align-items-center p-0 pl-md-5 mt-5" id="lista">
                             <h3 class="tituloCompras2 ">Compras</h3>
                         </div>
-                        <div class="listaGrupo d-flex justfy-content-center align-items-center col-11 m-auto p-0 ">
+                        <div class="listaGrupo d-flex justfy-content-center align-items-center col-12 col-md-11 m-auto p-0 ">
                             <div class="d-block col-12 p-0 ">
                                 <div class="tituloLista d-flex justify-content-center justify-content-md-start align-items-center col-12 pl-md-3">
-                                    <h5>Lista de Compras</h5>
+                                    <h5>Lista de Compras</h5><br/>
                                 </div>
                                 <div class="listaDeCompras d-flex justify-content-center align-items-center p-0 col-12 ">
                                     <table class="tabelaLista col-12 p-0 table table-striped ">
                                         <thead>
                                             <tr>
-                                                <th>Item</th>
+                                                <th>Check</th>
                                                 <th>Descrição</th>
                                                 <th>Quantidade</th>
                                                 <th><button type="button " class="btn btn-danger btn-sm btn-limpar">Limpar</button></th>
